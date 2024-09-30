@@ -15,4 +15,12 @@ class PostController extends Controller
         return view('posts.index', ['allposts'=> $posts]);
 
     }
+    public function show($id){
+        
+        $post= post::find($id);
+        // \Log::debug($post);
+        return view('posts.show', ['singlepost'=> $post]);
+
+
+    }
 }
