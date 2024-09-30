@@ -15,12 +15,20 @@ class PostController extends Controller
         return view('posts.index', ['allposts'=> $posts]);
 
     }
-    public function show($id){
+    public function show(Post $post){
         
-        $post= post::find($id);
-        // \Log::debug($post);
+        
         return view('posts.show', ['singlepost'=> $post]);
 
 
+    }
+
+    public function create(){
+        
+        return view('posts.create');
+    }
+    public function store(Request $request){
+        \log::debug($posts);
+        return "to be implemented";
     }
 }
